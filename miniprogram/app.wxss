@@ -18,14 +18,6 @@ button::after{
   border: none;
 }
 
-
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 .userinfo, .uploader, .tunnel {
   margin-top: 40rpx;
   height: 140rpx;
@@ -153,4 +145,37 @@ page {
   font-size: 24rpx;
   line-height: 36rpx;
   word-break: break-all;
+}
+
+image {
+  width: 0;
+  height: 0;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.overflow_h {
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_c {
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.mt24 {
+  margin-top: 24rpx !important;
+}
+
+.mb24 {
+  margin-bottom: 24rpx !important;
 }
