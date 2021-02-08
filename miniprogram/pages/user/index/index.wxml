@@ -1,12 +1,16 @@
 <!--pages/user/index/index.wxml-->
 <view class="page flex flex_c">
+
+    <!-- 登录按钮 -->
+    <button class="login_btn" wx:if="{{!isLogin}}" open-type="getUserInfo" bindgetuserinfo='getUserInfo'></button>
+
     <view class="user_index flex1">
         <view class="user_bg">
             <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_bg.jpg"></image>
         </view>
         <view class="user_items user_detail">
             <view class="avatar">
-                <image src="http://wx.qlogo.cn/mmhead/Q3auHgzwzM736eicaEgseGqKNb7S0c1axJUxclOAtVIicPKYVvk0fheA/0" />
+                <image src="{{userInfo.avatarUrl}}" />
             </view>
             <view class="overflow_h">
                 <view class="user_home text_center">
@@ -14,22 +18,22 @@
                     <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_01.png" />
                 </view>
             </view>
-            <view class="username text_center">肖成</view>
+            <view class="username text_center">{{userInfo.nickName}}</view>
             <view class="user_integral text_center">
-                <view>积分 0</view>
+                <view>积分 {{userInfo.integral}}</view>
                 <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_02.png"></image>
             </view>
             <view class="user_tab text_center flex">
                 <view class="user_tab_item flex1">
-                    <view class="user_tab_num">0</view>
+                    <view class="user_tab_num">{{userInfo.followProductNum}}</view>
                     <view class="user_tab_label">关注产品</view>
                 </view>
                 <view class="user_tab_item flex1">
-                    <view class="user_tab_num">0</view>
+                    <view class="user_tab_num">{{userInfo.collectionNum}}</view>
                     <view class="user_tab_label">收藏的清单</view>
                 </view>
                 <view class="user_tab_item flex1">
-                    <view class="user_tab_num">0</view>
+                    <view class="user_tab_num">{{userInfo.footPrintNum}}</view>
                     <view class="user_tab_label">足迹</view>
                 </view>
             </view>

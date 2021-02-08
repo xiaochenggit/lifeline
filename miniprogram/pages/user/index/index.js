@@ -6,14 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: App.globalData.tabList
+    openid: App.globalData.openid,
+    list: App.globalData.tabList, // tabbar 数据
+    userInfo: App.globalData.userInfo, // 用户信息
+    isLogin: false // 是否微信用户信息授权过
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(this.data.openid)
+    const _this = this
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          this.setData({
+            isLogin: true
+          })
+          wx.getUserInfo({
+            success: res => {
+              _this.uploadUserInfo(res.userInfo)
+            }
+          })
+        } else {
+          this.setData({
+            isLogin: false
+          })
+        }
+      }
+    });
   },
 
   /**
@@ -64,6 +86,54 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
+  /**
+   * 获取微信用户授权微信信息
+   * @param {*} e 
+   */
+  getUserInfo(e) {
+    this.uploadUserInfo(e.detail.userInfo)
+  },
+
+  /**
+   * 新建/拉取用户信息
+   * @param {Object} info 微信用户信息 
+   */
+  async uploadUserInfo(info) {
+    const { avatarUrl, nickName, gender } = info
+    let { userInfo } = this.data
+    userInfo = {
+      ...userInfo,
+      avatarUrl,
+      nickName,
+      gender
+    }
+    const db = wx.cloud.database()
+    const { openid } = this.data
+    const userData = (await db.collection('users').where({
+      _openid: openid
+    }).get()).data
+    // 如果没有获取到用户数据添加一条
+    if (userData.length) {
+      userInfo = userData[0]
+    } else {
+      await db.collection('users').add({
+        data:{
+          ...userInfo
+        }
+      })
+    }
+    App.globalData.userInfo = userInfo
+    this.setData({
+      userInfo: userInfo,
+      isLogin: true
+    })
+  },
+
+  /**
+   * tabbar tab切换
+   * @param {*} e
+   */
   tabChange(e) {
     App.tabChange(e)
   }

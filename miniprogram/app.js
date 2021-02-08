@@ -15,6 +15,7 @@ App({
     }
 
     this.globalData = {
+      openid: wx.getStorageSync('openid'),
       tabList: [{ // tab导航数据
         "text": "首页",
         "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/index_icon.png",
@@ -26,7 +27,25 @@ App({
         "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon.png",
         "selectedIconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon_active.png",
         "path": '/pages/user/index/index'
-      }]
+      }],
+      // userInfo信息
+      userInfo: {
+        nickName: '登录', // 登录名称
+        avatarUrl: 'cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/avatar_default.jpg', // 头像
+        country: '', // 国家
+        province: '', // 省份
+        city: '', // 城市
+        vipGrade: 0, // vip等级
+        phone: '', // 电话号码
+        birthday: '', // 生日
+        gender: 2, // 性别
+        autograph: '', // 签名
+        followProductNum: 0, // 关注产品数目
+        collectionNum: 0, // 收藏数目
+        footPrintNum: 0, // 足迹数目
+        messageNum: 0, // 未读消息数目
+        integral: 0 // 积分
+      }
     }
   },
   // tab导航切换

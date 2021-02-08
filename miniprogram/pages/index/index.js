@@ -12,6 +12,7 @@ Page({
   },
 
   onLoad: function() {
+    console.log(app.globalData.userInfo)
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -54,7 +55,12 @@ Page({
       data: {},
       success: res => {
         console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
+        const openid = res.result.openid
+        wx.setStorage({
+          key: "openid",
+          data: openid
+        })
+        app.globalData.openid = openid
         wx.navigateTo({
           url: '../userConsole/userConsole',
         })

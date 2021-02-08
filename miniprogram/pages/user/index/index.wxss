@@ -140,3 +140,10 @@ page {
 .user_item + .user_item {
   border-top: 2rpx solid #ededed;
 }
+
+.login_btn {
+  position: absolute;
+  width: 100% !important;
+  height: 100%;
+  z-index: 2;
+}
