@@ -13,7 +13,7 @@
                 <image src="{{userInfo.avatarUrl}}" />
             </view>
             <view class="overflow_h">
-                <view class="user_home text_center">
+                <view class="user_home text_center" bind:tap="toUserIndex">
                     <view>个人首页</view>
                     <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_01.png" />
                 </view>
@@ -38,7 +38,7 @@
                 </view>
             </view>
         </view>
-        <view class="user_items mt24">
+        <view class="user_items mt24 mb24">
             <view class="user_item">
                 <view>我的消息</view>
                 <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_message.png" />

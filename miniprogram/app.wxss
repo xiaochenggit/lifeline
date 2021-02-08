@@ -176,6 +176,10 @@ image {
   display: flex;
 }
 
+.flex_center {
+  justify-content: center;
+}
+
 .flex_c {
   flex-direction: column;
 }

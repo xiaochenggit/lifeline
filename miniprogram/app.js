@@ -39,12 +39,15 @@ App({
         phone: '', // 电话号码
         birthday: '', // 生日
         gender: 2, // 性别
-        autograph: '', // 签名
+        autograph: '', // 签名/简介
         followProductNum: 0, // 关注产品数目
         collectionNum: 0, // 收藏数目
         footPrintNum: 0, // 足迹数目
         messageNum: 0, // 未读消息数目
-        integral: 0 // 积分
+        integral: 0, // 积分
+        address: '', // 地址
+        operation: '', // 职业
+        weChat: '' // 微信号
       }
     }
   },

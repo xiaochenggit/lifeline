@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -20,6 +21,12 @@
         {
           "name": "我的",
           "pathName": "pages/user/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑信息",
+          "pathName": "pages/user/edit/edit",
           "scene": null
         }
       ]

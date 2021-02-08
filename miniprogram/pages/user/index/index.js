@@ -16,7 +16,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.openid)
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     const _this = this
     wx.getSetting({
       success: res => {
@@ -36,20 +49,6 @@ Page({
         }
       }
     });
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
@@ -83,9 +82,9 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  },
+  // },
   
   /**
    * 获取微信用户授权微信信息
@@ -124,9 +123,16 @@ Page({
       })
     }
     App.globalData.userInfo = userInfo
+    console.log(App.globalData)
     this.setData({
       userInfo: userInfo,
       isLogin: true
+    })
+  },
+
+  toUserIndex() {
+    wx.navigateTo({
+      url: '/pages/user/edit/edit'
     })
   },
 

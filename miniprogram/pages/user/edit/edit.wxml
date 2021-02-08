@@ -1,0 +1,54 @@
+<!--pages/user/edit/edit.wxml-->
+<view class="user_edit">
+    <view class="edit_items">
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">头像</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <image class="avatarUrl" src="{{userInfo.avatarUrl}}" />
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">昵称</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                 <input class="edit_item_input" bindinput="inputChange" data-type="nickName" value="{{userInfo.nickName}}" placeholder="请输入昵称" placeholder-class="placeholder"/>
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">简介</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <input class="edit_item_input" bindinput="inputChange" data-type="autograph" value="{{userInfo.autograph}}" placeholder="请输入简介" placeholder-class="placeholder"/>
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">职业</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <input class="edit_item_input" bindinput="inputChange" data-type="operation" value="{{userInfo.operation}}" placeholder="请输入职业" placeholder-class="placeholder"/>
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">手机</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <!-- <view class="edit_item_text" wx:if="{{userInfo.phone}}">{{userInfo.phone}}</view> -->
+                <!-- <button class="edit_item_btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class="none">点击授权</button> -->
+                <input class="edit_item_input" type="number" bindinput="inputChange" data-type="phone" maxlength="11" value="{{userInfo.phone}}" placeholder="请输入手机号码" placeholder-class="placeholder"/>
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">微信</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <input class="edit_item_input" bindinput="inputChange" data-type="weChat" value="{{userInfo.weChat}}" placeholder="请输入微信号" placeholder-class="placeholder"/>
+            </view>
+        </view>
+        <view class="edit_item flex">
+            <view class="edit_item_label flex1">收货地址</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <view class="edit_item_text" wx:if="{{userInfo.address}}" bind:tap="chooseAddress">{{userInfo.address}}</view>
+                <button wx:else class="edit_item_btn" bind:tap="chooseAddress" hover-class="none">选择收货地址</button>
+            </view>
+        </view>
+    </view>
+    <view class="user_btn_box">
+        <view class="user_btn" bind:tap="checkUpdateUser">保存</view>
+    </view>
+    <mp-toptips msg="{{message.message}}" type="{{message.type}}" show="{{message.message}}"></mp-toptips>
+</view>

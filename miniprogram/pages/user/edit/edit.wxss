@@ -1,0 +1,64 @@
+/* pages/user/edit/edit.wxss */
+
+.edit_items {
+    padding: 30rpx 34rpx 30rpx;
+    padding-bottom: 168rpx;
+}
+
+.edit_item_label {
+    line-height: 158rpx;
+    font-size: 30rpx;
+    color: #272727;
+}
+
+.edit_item {
+    border-bottom: 2rpx solid #ececec;
+}
+
+.avatarUrl {
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 50%;
+}
+
+.edit_item_btn {
+    line-height: 80rpx !important;
+    color: #565656;
+    font-size: 28rpx;
+    border-radius: 40rpx;
+    padding: 0 60rpx;
+    width: auto !important;
+    border: 2rpx solid #cecece;
+    font-weight: 400;
+}
+
+.edit_item_text {
+    color: #626262;
+    max-width: 400rpx;
+}
+
+.edit_item_input {
+    width: 400rpx;
+    line-height: 56rpx;
+    text-align: right;
+    height: 56rpx;
+}
+.user_btn_box {
+    padding: 34rpx 34rpx;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+.user_btn {
+    line-height: 100rpx;
+    text-align: center;
+    background-color: #DE2022;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 32rpx;
+    letter-spacing: 4rpx;
+    text-indent: -4rpx;
+}

@@ -1,5 +1,6 @@
 {
   "disableScroll": true,
+  "navigationBarTitleText": "我的",
   "usingComponents": {
     "mp-tabbar": "weui-miniprogram/tabbar/tabbar"
   }
