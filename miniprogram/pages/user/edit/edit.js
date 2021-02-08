@@ -12,7 +12,8 @@ Page({
     message: {
       message: '',
       type: ''
-    }
+    },
+    birthdayEnd: '2020-02-08' // 生日选择最大日期
   },
 
   /**
@@ -77,7 +78,7 @@ Page({
    * 验证是否可以更新用户信息
    */
   checkUpdateUser() {
-    const { avatarUrl, nickName, autograph, phone, operation, weChat, address } = this.data.userInfo
+    const { avatarUrl, nickName, birthday, autograph, phone, operation, weChat, address } = this.data.userInfo
     if (!nickName) {
       this.setData({
         message: {
@@ -94,7 +95,8 @@ Page({
       operation,
       weChat,
       address,
-      phone
+      phone,
+      birthday
     }
     this.updateUser(data)
   },
@@ -149,6 +151,19 @@ Page({
     const { type } = e.currentTarget.dataset
     const { userInfo } = this.data
     userInfo[type] = value
+    this.setData({
+      userInfo
+    })
+  },
+
+  /**
+   * 日期选择器
+   * @param {Object} e 
+   */
+  bindDateChange(e) {
+    const { value } = e.detail
+    const { userInfo } = this.data
+    userInfo.birthday = value
     this.setData({
       userInfo
     })

@@ -33,7 +33,6 @@
 }
 
 .edit_item_text {
-    color: #626262;
     max-width: 400rpx;
 }
 
