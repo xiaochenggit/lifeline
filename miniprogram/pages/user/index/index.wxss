@@ -140,13 +140,3 @@ page {
 .user_item + .user_item {
   border-top: 2rpx solid #ededed;
 }
-
-.weui-tabbar {
-  background-color: #fff;
-}
-.weui-tabbar__label {
-  color: #9a9a9a;
-}
-.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
-  color: #e3431a;
-}

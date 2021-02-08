@@ -50,6 +50,6 @@
         </view>
     </view>
     <view>
-        <mp-tabbar list="{{list}}" bindchange="tabChange"></mp-tabbar>
+        <mp-tabbar current='{{1}}' list="{{list}}" bindchange="tabChange"></mp-tabbar>
     </view>
 </view>

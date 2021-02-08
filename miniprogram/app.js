@@ -14,6 +14,26 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      tabList: [{ // tab导航数据
+        "text": "首页",
+        "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/index_icon.png",
+        "selectedIconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/index_icon_active.png",
+        "path": '/pages/index/index'
+      },
+      {
+        "text": "我的",
+        "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon.png",
+        "selectedIconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon_active.png",
+        "path": '/pages/user/index/index'
+      }]
+    }
+  },
+  // tab导航切换
+  tabChange(e) {
+    const { path } = e.detail.item
+    wx.reLaunch({
+      url: path
+    })
   }
 })

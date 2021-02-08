@@ -7,7 +7,8 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    list: app.globalData.tabList
   },
 
   onLoad: function() {
@@ -114,5 +115,7 @@ Page({
       }
     })
   },
-
+  tabChange(e) {
+    app.tabChange(e)
+  }
 })

@@ -1,20 +1,12 @@
 // pages/user/index/index.js
+const App = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-        "text": "首页",
-        "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/index_icon.png",
-        "selectedIconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/index_icon_active.png"
-      },
-      {
-        "text": "我的",
-        "iconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon.png",
-        "selectedIconPath": "cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_icon_active.png"
-      }]
+    list: App.globalData.tabList
   },
 
   /**
@@ -71,5 +63,8 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  tabChange(e) {
+    App.tabChange(e)
   }
 })

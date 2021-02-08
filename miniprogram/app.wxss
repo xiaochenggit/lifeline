@@ -1,4 +1,16 @@
 /**app.wxss**/
+
+/* 底部导航 */
+.weui-tabbar {
+  background-color: #fff;
+}
+.weui-tabbar__label {
+  color: #9a9a9a;
+}
+.weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+  color: #e3431a;
+}
+
 .container {
   display: flex;
   flex-direction: column;
