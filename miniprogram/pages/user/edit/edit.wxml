@@ -16,7 +16,7 @@
         <view class="edit_item flex">
             <view class="edit_item_label flex1">生日</view>
             <view class="edit_item_body flex flex_c flex_center">
-                <picker mode="date" value="{{userInfo.birthday}}" start="1920-01-01" end="{{birthdayEnd}}" bindchange="bindDateChange">
+                <picker mode="date" value="{{userInfo.birthday}}" start="{{birthdayStart}}" end="{{birthdayEnd}}" bindchange="bindDateChange">
                     <view class="picker edit_item_text">
                         {{userInfo.birthday ? userInfo.birthday : '请选择'}}
                     </view>

@@ -1,6 +1,6 @@
 // pages/user/edit/edit.js
 const App = getApp();
-
+const utils = require('../../common/utils.js')
 Page({
 
   /**
@@ -13,7 +13,8 @@ Page({
       message: '',
       type: ''
     },
-    birthdayEnd: '2020-02-08' // 生日选择最大日期
+    birthdayStart: '1960-01-01',
+    birthdayEnd: utils.formatTime('') // 生日选择最大日期(当前天)
   },
 
   /**
@@ -83,6 +84,15 @@ Page({
       this.setData({
         message: {
           message: '请输入昵称!',
+          type: 'error'
+        }
+      })
+      return false
+    }
+    if (!utils.checkPhone(phone)) {
+      this.setData({
+        message: {
+          message: '请输入正确的手机号码!',
           type: 'error'
         }
       })
