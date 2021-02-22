@@ -1,7 +1,7 @@
 <!--pages/user/edit/edit.wxml-->
 <view class="user_edit">
     <view class="edit_items">
-        <view class="edit_item flex">
+        <view class="edit_item flex" bind:tap="chooseImage">
             <view class="edit_item_label flex1">头像</view>
             <view class="edit_item_body flex flex_c flex_center">
                 <image class="avatarUrl" src="{{userInfo.avatarUrl}}" />

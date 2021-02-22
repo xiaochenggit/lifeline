@@ -199,6 +199,46 @@ Page({
   },
 
   /**
+   * 上传头像 
+   */
+  chooseImage() {
+    const _this = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePath = res.tempFilePaths[0]
+        console.log(tempFilePath)
+        _this.uploadFileImage(tempFilePath)
+      }
+    })
+  },
+
+  /**
+   * 图片上传到服务器
+   * @param {String} filePath 小程序临时文件路径 
+   */
+  uploadFileImage(filePath) {
+    const cloudPath = `avatar/${Date.now()}-${Math.floor(Math.random(0, 1) * 1000)}` + filePath.match(/.[^.]+?$/)[0]
+    const _this = this
+    wx.cloud.uploadFile({
+      cloudPath, // 上传至云端的路径
+      filePath, // 小程序临时文件路径
+      success: res => {
+        // 返回文件 ID
+        const userInfo = _this.data.userInfo
+        userInfo.avatarUrl = res.fileID
+        _this.setData({
+          userInfo
+        })
+      },
+      fail: console.error
+    })
+  },
+
+  /**
    * 选择收货地址
    */
   chooseAddress() {
