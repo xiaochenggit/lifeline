@@ -139,5 +139,17 @@ Page({
    */
   tabChange(e) {
     App.tabChange(e)
+  },
+
+  /**
+   * 头像预览
+   * @param {String} url 
+   */
+  previewImage(e) {
+    const url = e.currentTarget.dataset.url
+    wx.previewImage({
+      current: 0, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+    })
   }
 })

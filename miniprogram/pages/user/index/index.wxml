@@ -9,7 +9,7 @@
             <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_bg.jpg"></image>
         </view>
         <view class="user_items user_detail">
-            <view class="avatar">
+            <view class="avatar" bind:tap="previewImage" data-url="{{userInfo.avatarUrl}}">
                 <image src="{{userInfo.avatarUrl}}" />
             </view>
             <view class="overflow_h">
