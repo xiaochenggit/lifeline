@@ -8,7 +8,7 @@ Page({
   data: {
     openid: App.globalData.openid,
     list: App.globalData.tabList, // tabbar 数据
-    userInfo: App.globalData.userInfo, // 用户信息
+    userInfo: wx.getStorageSync('userInfo') || App.globalData.userInfo, // 用户信息
     isLogin: false // 是否微信用户信息授权过
   },
 
@@ -34,9 +34,6 @@ Page({
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          this.setData({
-            isLogin: true
-          })
           wx.getUserInfo({
             success: res => {
               _this.uploadUserInfo(res.userInfo)
@@ -123,7 +120,7 @@ Page({
       })
     }
     App.globalData.userInfo = userInfo
-    console.log(App.globalData)
+    wx.setStorageSync('userInfo', userInfo)
     this.setData({
       userInfo: userInfo,
       isLogin: true
