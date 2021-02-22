@@ -6,6 +6,9 @@
             <view class="edit_item_body flex flex_c flex_center">
                 <image class="avatarUrl" src="{{userInfo.avatarUrl}}" />
             </view>
+            <view class="edit_item_right flex flex_c flex_center">
+                <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_01.png"></image>
+            </view>
         </view>
         <view class="edit_item flex">
             <view class="edit_item_label flex1">昵称</view>
@@ -19,6 +22,19 @@
                 <picker mode="date" value="{{userInfo.birthday}}" start="{{birthdayStart}}" end="{{birthdayEnd}}" bindchange="bindDateChange">
                     <view class="picker edit_item_text">
                         {{userInfo.birthday ? userInfo.birthday : '请选择'}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+         <view class="edit_item flex">
+            <view class="edit_item_label flex1">性别</view>
+            <view class="edit_item_body flex flex_c flex_center">
+                <picker value="{{genderIndex}}" range="{{genderArray}}" bindchange="bindGenderChange">
+                    <view class="flex">
+                        <view class="picker edit_item_text">{{genderArray[genderIndex]}}</view>
+                        <view style="margin-left:0" class="edit_item_right flex flex_c flex_center">
+                            <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_01.png"></image>
+                        </view>
                     </view>
                 </picker>
             </view>
@@ -51,9 +67,14 @@
         </view>
         <view class="edit_item flex">
             <view class="edit_item_label flex1">收货地址</view>
-            <view class="edit_item_body flex flex_c flex_center">
-                <view class="edit_item_text" wx:if="{{userInfo.address}}" bind:tap="chooseAddress">{{userInfo.address}}</view>
-                <button wx:else class="edit_item_btn" bind:tap="chooseAddress" hover-class="none">选择收货地址</button>
+            <view class="edit_item_body flex" bind:tap="chooseAddress">
+                <view class="edit_item_text flex flex_c flex_center" wx:if="{{userInfo.address}}">{{userInfo.address}}</view>
+                <view class="flex flex_c flex_center" wx:else>
+                    <button class="edit_item_btn" hover-class="none">选择收货地址</button>
+                </view>
+                <view wx:if="{{userInfo.address}}" class="edit_item_right flex flex_c flex_center">
+                    <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/right_01.png"></image>
+                </view>
             </view>
         </view>
     </view>

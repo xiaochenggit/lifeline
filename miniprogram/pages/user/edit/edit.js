@@ -14,6 +14,8 @@ Page({
       type: ''
     },
     birthdayStart: '1960-01-01',
+    genderArray: ['男', '女', '保密'],
+    genderIndex: 2,
     birthdayEnd: utils.formatTime('') // 生日选择最大日期(当前天)
   },
 
@@ -28,8 +30,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    const userInfo = wx.getStorageSync('userInfo') || App.globalData.userInfo
     this.setData({
-      userInfo: App.globalData.userInfo
+      userInfo,
+      genderIndex: userInfo.gender
     })
   },
 
@@ -79,7 +83,7 @@ Page({
    * 验证是否可以更新用户信息
    */
   checkUpdateUser() {
-    const { avatarUrl, nickName, birthday, autograph, phone, operation, weChat, address } = this.data.userInfo
+    const { avatarUrl, nickName, gender, birthday, autograph, phone, operation, weChat, address } = this.data.userInfo
     if (!nickName) {
       this.setData({
         message: {
@@ -106,7 +110,8 @@ Page({
       weChat,
       address,
       phone,
-      birthday
+      birthday,
+      gender
     }
     this.updateUser(data)
   },
@@ -175,6 +180,20 @@ Page({
     const { userInfo } = this.data
     userInfo.birthday = value
     this.setData({
+      userInfo
+    })
+  },
+
+  /**
+   * 性别选择器
+   * @param {Object} e 
+   */
+  bindGenderChange(e) {
+    const { userInfo } = this.data
+    const genderIndex = e.detail.value
+    userInfo.gender = genderIndex
+    this.setData({
+      genderIndex,
       userInfo
     })
   },

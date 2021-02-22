@@ -21,6 +21,15 @@
     border-radius: 50%;
 }
 
+.edit_item_right {
+    margin-left: 15rpx;
+}
+
+.edit_item_right image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
 .edit_item_btn {
     line-height: 80rpx !important;
     color: #565656;
@@ -30,6 +39,7 @@
     width: auto !important;
     border: 2rpx solid #cecece;
     font-weight: 400;
+    height: 84rpx;
 }
 
 .edit_item_text {
@@ -50,6 +60,7 @@
     bottom: 0;
     left: 0;
     box-sizing: border-box;
+    z-index: 10;
 }
 .user_btn {
     line-height: 100rpx;
