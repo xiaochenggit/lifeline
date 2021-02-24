@@ -134,6 +134,17 @@ Page({
   },
 
   /**
+   * 跳转页面
+   * @param {object} e 跳转页面参数 
+   */
+  linkTo(e) {
+    const { url } = e.currentTarget.dataset
+    wx.navigateTo({
+      url
+    })
+  },
+
+  /**
    * tabbar tab切换
    * @param {*} e
    */

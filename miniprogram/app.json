@@ -14,18 +14,25 @@
     "pages/im/im",
     "pages/im/room/room",
     "pages/user/index/index",
-    "pages/user/edit/edit"
+    "pages/user/edit/edit",
+    "pages/weather/index"
   ],
   "window": {
     "backgroundColor": "#FFFFFF",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "线上生活",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "useExtendedLib" : {
     "weui": true
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序效果展示"
+    }
   }
 }

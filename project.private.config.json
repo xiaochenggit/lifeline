@@ -27,6 +27,13 @@
         {
           "name": "编辑信息",
           "pathName": "pages/user/edit/edit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/weather/index",
+          "pathName": "pages/weather/index",
+          "query": "",
           "scene": null
         }
       ]

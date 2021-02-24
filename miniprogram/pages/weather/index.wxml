@@ -1,0 +1,28 @@
+<!--pages/weather/index.wxml-->
+<view class="weather">
+    <view class="flex" wx:if="{{weather.icon}}">
+        <view>{{region[2]}}：</view>
+        <view>
+            <image class="weather_icon" src="{{'cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/weather_icon/' + weather.icon + '.png'}}" />
+        </view>
+        <view class="flex1">{{weather.temp}}℃</view>
+        <view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+                <view class="picker">切换城市</view>
+            </picker>
+        </view>
+    </view>
+    <view class="weather_list">
+        <view class="weather_item flex" wx:for="{{weather3day}}" wx:key="index">
+            <view>{{dayList[index]}}</view>
+            <view class="flex1 text_center">
+              <image class="weather_icon" src="{{'cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/weather_icon/' + item.iconDay + '.png'}}"></image>
+            </view>
+            <view class="flex1 text_center">{{item.tempMin}}°/{{item.tempMax}}°</view>
+            <view class="air">良</view>
+        </view>
+    </view>
+    <mp-dialog title="{{dialogTitle}}" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>{{dialogContent}}</view>
+    </mp-dialog>
+</view>
