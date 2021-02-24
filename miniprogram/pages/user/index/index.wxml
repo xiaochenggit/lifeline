@@ -51,6 +51,10 @@
                 <view>实时天气</view>
                 <image style="width: 46rpx;height: 46rpx;" src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_weather.png" />
             </view>
+            <view class="user_item" bind:tap="linkTo" data-url='/pages/historytoday/index'>
+                <view>历史今天</view>
+                <image style="width: 46rpx;height: 46rpx;" src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_history_today.png" />
+            </view>
             <view class="user_item">
                 <view>关于我们</view>
                 <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_about.png" />

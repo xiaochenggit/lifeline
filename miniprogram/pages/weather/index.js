@@ -118,7 +118,7 @@ Page({
   getWeather(latitude, longitude) {
     const _this = this
     wx.cloud.callFunction({
-      name: 'getWeather',
+      name: 'axios',
       data: {
         url: 'https://devapi.qweather.com/v7/weather/now',
         key: weatherKey,
@@ -149,7 +149,7 @@ Page({
   getWeather3day(latitude, longitude) {
     const _this = this
     wx.cloud.callFunction({
-      name: 'getWeather',
+      name: 'axios',
       data: {
         url: 'https://devapi.qweather.com/v7/weather/3d',
         key: weatherKey,
@@ -175,7 +175,7 @@ Page({
   getAir(latitude, longitude) {
     const _this = this
     wx.cloud.callFunction({
-      name: 'getWeather',
+      name: 'axios',
       data: {
         url: 'https://api.qweather.com/v7/air/5d',
         key: weatherKey,

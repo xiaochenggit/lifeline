@@ -1,0 +1,28 @@
+/* pages/historytoday/index.wxss */
+
+.err {
+  padding-top: 100rpx;
+}
+
+.history {
+  padding: 0 24rpx;
+}
+
+.history_year {
+  font-size: 26rpx;
+  color: #333;
+}
+.history_title {
+  margin-bottom: 10rpx;
+  line-height: 48rpx;
+}
+.history_item {
+  padding: 10rpx 0;
+}
+
+.history_item + .history_item {
+  border-top: 2rpx solid #ededed;
+}
+.history_item:last-child {
+  padding-bottom: 40rpx;
+}

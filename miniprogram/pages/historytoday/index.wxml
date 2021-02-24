@@ -1,0 +1,16 @@
+<!--pages/historytoday/index.wxml-->
+<view>
+  <view class="text_center err" wx:if="{{err}}">
+    {{err}}
+  </view>
+  <view wx:else class="history">
+    <mp-loading type="circle" show="{{isLoading}}"></mp-loading>
+    <!-- <view class="today text_center">{{today}}历史上的今天</view> -->
+    <view class="history_list">
+      <view class="history_item" wx:for="{{historyList}}" wx:key="index">
+        <view class="history_title">{{item.title}}</view>
+        <view class="history_year">公元{{item.year}}年</view>
+      </view>
+    </view>
+  </view>
+</view>

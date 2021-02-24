@@ -15,7 +15,8 @@
     "pages/im/room/room",
     "pages/user/index/index",
     "pages/user/edit/edit",
-    "pages/weather/index"
+    "pages/weather/index",
+    "pages/historytoday/index"
   ],
   "window": {
     "backgroundColor": "#FFFFFF",
