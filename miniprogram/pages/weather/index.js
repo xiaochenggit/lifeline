@@ -10,6 +10,7 @@ Page({
     dayList: ['今天', '明天', '后天'],
     weather: {}, // 实时天气
     weather3day: [], // 3天内天气
+    air5day: [], // 五天空气质量
     latitude: '',
     longitude: '',
     region: ['北京市', '北京市', '朝阳区'],
@@ -177,14 +178,17 @@ Page({
     wx.cloud.callFunction({
       name: 'axios',
       data: {
-        url: 'https://api.qweather.com/v7/air/5d',
+        url: 'https://devapi.qweather.com/v7/air/5d',
         key: weatherKey,
         location: `${utils.currency(longitude, '')},${utils.currency(latitude, '')}`
       },
       success: res => {
         res = res.result
         if (res.code == '200') {
-          console.log(res)
+          // console.log(res)
+          _this.setData({
+            air5day: res.daily
+          })
         }
       },
       fail: err => {
@@ -224,6 +228,7 @@ Page({
         const { lng, lat } = res.data.result.location
         _this.getWeather(lat, lng)
         _this.getWeather3day(lat, lng)
+        _this.getAir(lat, lng)
       }
     })
   },

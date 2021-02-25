@@ -19,7 +19,7 @@
               <image class="weather_icon" src="{{'cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/weather_icon/' + item.iconDay + '.png'}}"></image>
             </view>
             <view class="flex1 text_center">{{item.tempMin}}°/{{item.tempMax}}°</view>
-            <view class="air">良</view>
+            <view class="air">{{air5day[index].category}}</view>
         </view>
     </view>
     <mp-dialog title="{{dialogTitle}}" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
