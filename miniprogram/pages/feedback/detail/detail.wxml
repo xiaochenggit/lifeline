@@ -1,0 +1,29 @@
+<!--pages/feedback/detail/detail.wxml-->
+<view class="feed_detail">
+    <mp-toptips msg="{{message.message}}" type="{{message.type}}" show="{{message.message}}"></mp-toptips>
+    <view class="feed_tit feed_detail_item">{{type}}</view>
+    <view class="feed_describe feed_detail_item">
+        <textarea bindinput="inputChange" data-type='describe' auto-height placeholder="请填写10字以上的问题描述以便我们提供更好的帮助" />
+    </view>
+    <view class="feed_images feed_detail_item">
+        <view class="feed_tit">截图({{images.length}}/{{maxImagesLength}})</view>
+        <view class='images_list flex'>
+            <view class="images_item" wx:for="{{images}}" wx:key="index">
+                <image src="{{item}}" />
+                <mp-icon class="image_del" bind:tap="deleteImage" data-index='{{index}}' icon="close2" color="#000" size="{{20}}"></mp-icon>
+            </view>
+            <view class="images_item upload" wx:if="{{images.length < maxImagesLength}}" bind:tap="chooseImage">
+                <mp-icon class="upload_icon center_center" icon="add" color="#a2a2a2" size="{{25}}"></mp-icon>
+            </view>
+        </view>
+    </view>
+    <view class="feed_describe feed_detail_item flex">
+        <view>联系方式</view>
+        <view class="flex1">
+            <input bindinput="inputChange" data-type='concat' bindinput="inputChange" placeholder="邮箱/手机号" />
+        </view>
+    </view>
+    <view class="feed_btn_box text_center">
+        <view class="feed_btn {{canUpload ? '' : 'no'}}" bind:tap="check">提交</view>
+    </view>
+</view>

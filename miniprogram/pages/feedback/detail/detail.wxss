@@ -1,0 +1,89 @@
+/* pages/feedback/detail/detail.wxss */
+
+.feed_detail {
+    padding: 0 56rpx;
+}
+
+.feed_tit {
+    font-size: 32rpx;
+    line-height: 56rpx;
+}
+
+.feed_detail_item {
+    border-bottom: 2rpx solid #f0f0f0;
+    padding: 24rpx 0;
+}
+
+.feed_images .feed_tit {
+    margin-bottom: 10rpx;
+}
+
+.images_item {
+    width: 175rpx;
+    height: 175rpx;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+    position: relative;
+}
+
+.images_item > image {
+    width: 100%;
+    height: 100%;
+}
+
+.upload {
+    background-color: #ededed;
+}
+
+.image_del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    z-index: 1;
+}
+
+.feed_describe {
+    line-height: 38rpx;
+}
+
+.feed_describe textarea,
+.feed_describe input {
+    line-height: 38rpx;
+    width: 100%;
+}
+
+.feed_describe textarea {
+    min-height: 152rpx;
+}
+
+.feed_describe input {
+    margin-left: 40rpx;
+}
+
+.textarea-placeholder,
+.input-placeholder {
+    color: #b1b1b1;
+}
+
+.feed_btn_box {
+    margin-top: 60rpx;
+}
+
+.feed_btn {
+    line-height: 70rpx;
+    background-color: #57be6a;
+    width: 335rpx;
+    border-radius: 8rpx;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    font-size: 36rpx;
+    letter-spacing: 2rpx;
+    text-indent: -2rpx;
+}
+
+.feed_btn.no {
+    background-color: #f2f2f2;
+    color: #bfbfbf;
+}

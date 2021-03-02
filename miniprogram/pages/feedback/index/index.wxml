@@ -1,0 +1,18 @@
+<!--pages/feedback/index/index.wxml-->
+<view class="feedback">
+    <view class="feedback_title text_center">请选择反馈类型</view>
+    <view class="question">
+        <block wx:for="{{question}}" wx:key="index">
+            <view class="question_tit">{{item.title}}</view>
+            <view class="question_item flex" wx:for="{{item.list}}" bind:tap="toDetail" data-item='{{questionitem}}' wx:for-item="questionitem" wx:key="idx" wx:for-index="idx">
+                <view class="flex1">
+                    <view class="question_item_tit">{{questionitem.title}}</view>
+                    <view class="question_item_desc">{{questionitem.desc}}</view>
+                </view>
+                <view class="question_icon flex flex_c flex_center ml20">
+                    <mp-icon icon="arrow" color="#c8c8cc" size="{{14}}"></mp-icon>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

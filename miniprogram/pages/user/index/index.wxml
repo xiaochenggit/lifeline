@@ -43,7 +43,7 @@
                 <view>我的消息</view>
                 <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_message.png" />
             </view>
-            <view class="user_item">
+            <view class="user_item" bind:tap="linkTo" data-url='/pages/feedback/index/index'>
                 <view>问题反馈</view>
                 <image src="cloud://xly-9gdlbq01cba1b2bb.786c-xly-9gdlbq01cba1b2bb-1300411113/images/user_feedback.png" />
             </view>

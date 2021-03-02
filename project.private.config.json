@@ -41,6 +41,18 @@
           "pathName": "pages/historytoday/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "问题反馈",
+          "pathName": "pages/feedback/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "反馈详情",
+          "pathName": "pages/feedback/detail/detail",
+          "query": "type=支付问题",
+          "scene": null
         }
       ]
     }

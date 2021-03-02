@@ -1,0 +1,32 @@
+/* pages/feedback/index/index.wxss */
+
+.feedback {
+    padding: 150rpx 56rpx 0;
+}
+
+.feedback_title {
+    color: #000000;
+    font-size: 42rpx;
+    font-weight: 400;
+    margin-bottom: 48rpx;
+}
+.question_tit {
+    line-height: 56rpx;
+    color: #8e8e8e;
+    border-bottom: 2rpx solid #f0f0f0;
+    padding: 50rpx 0 10rpx;
+}
+.question_item_tit {
+    font-size: 32rpx;
+    line-height: 56rpx;
+    padding-bottom: 10rpx;
+}
+.question_item_desc {
+    font-size: 26rpx;
+    color: #8e8e8e;
+}
+
+.question_item {
+    padding: 20rpx 0 30rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+}

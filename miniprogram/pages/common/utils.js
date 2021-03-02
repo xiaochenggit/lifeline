@@ -34,6 +34,11 @@ export function checkPhone(phone) {
     return phone.match(/^(13|14|15|16|17|18|19)\d{9}$/)
 }
 
+// 验证邮箱
+export function checkEmail(email) {
+    return /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email)
+}
+
 // 格式化
 export function currency(value, currency, decimals) {
     if (!value) {

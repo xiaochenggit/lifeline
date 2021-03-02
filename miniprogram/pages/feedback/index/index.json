@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "问题反馈",
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

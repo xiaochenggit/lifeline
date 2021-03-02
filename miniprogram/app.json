@@ -16,7 +16,9 @@
     "pages/user/index/index",
     "pages/user/edit/edit",
     "pages/weather/index",
-    "pages/historytoday/index"
+    "pages/historytoday/index",
+    "pages/feedback/index/index",
+    "pages/feedback/detail/detail"
   ],
   "window": {
     "backgroundColor": "#FFFFFF",
